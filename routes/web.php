@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'NewsController@index');
+Route::get('/{id}', 'NewsController@show')->name('news.show');

@@ -17,9 +17,9 @@ class ParsePageSlider extends BaseParsePage
             $news->title = $item->find('h1')->text();
         }
 
-        if ($item->find('.article__text')->count()){
-            $news->desc = $item->find('.article__text')->html();
-            $news->shortDesc = mb_substr($item->find('.article__text')->text(), 0, 200, "UTF-8");
+        if ($item->find('.article__text p')->count()){
+            $news->desc = $item->find('.article__text p')->html();
+            $news->shortDesc = mb_substr($item->find('.article__text p')->text(), 0, 200, "UTF-8");
         } else {
             $news->desc = $item->find('.article__text__overview')->html();
             $news->shortDesc = mb_substr($item->find('.article__text__overview')->text(), 0, 200, "UTF-8");
